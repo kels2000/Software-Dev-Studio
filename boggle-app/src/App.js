@@ -1,19 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TextInput from './text-input.js';
+import Board from './Board.js';
+import {RandomGrid} from './BoilerPlate';
+import NestedGrid from './Board.js';
+import GroupOrientation from './HideShowButtons.js'
+import BasicTextFields from './TextField.js'
+//import Grid from '@material-ui/core/Grid';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is Kelsi's React App! Period. 
-        </p>
-        <TextInput promptText="Name?"/>
-        <TextInput promptText="Hometown?"/>
+        <img src={require("./bogglepic.png")} className="App-logo" alt="logo" />
         <br></br>
+        {GroupOrientation()}
         <a
           className="App-link"
           href="https://reactjs.org"
