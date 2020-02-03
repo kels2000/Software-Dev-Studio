@@ -1,21 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Board from './Board.js';
+import React, {useState} from 'react';
 import {RandomGrid} from './BoilerPlate';
 import NestedGrid from './Board.js';
-import GroupOrientation from './HideShowButtons.js'
-import BasicTextFields from './TextField.js'
-//import Grid from '@material-ui/core/Grid';
+import './App.css';
+import BasicTextFields from './TextField.js';
+import findAllSolutions from './boggle_solver.js';
+import Board from './BoggleBoard.js'
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import NewBoard from './NewBoard.js'
 
 
 function App() {
+const [buttonText, setButtonText] = useState("Start Game!");
+const [show, setShow] = useState(false);  
+
+  function toggleBoard() {
+    if (show === false){
+      setButtonText("End Game!"); 
+    }
+    else {
+      setButtonText("Start Game!")
+    }
+    setShow(!show)
+  }
+  function startGame(bool) {
+    if (bool === true) {
+      return <Board/>;
+    }
+    else if (bool == false) {
+      return null;
+    }
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={require("./bogglepic.png")} className="App-logo" alt="logo" />
         <br></br>
-        {GroupOrientation()}
+        {startGame(show)}
+        <br></br>
+        {BasicTextFields()}
+        <br></br>
+        <Button onClick={() => toggleBoard()}>{buttonText}</Button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -27,6 +54,8 @@ function App() {
       </header>
     </div>
   );
-}
+};
+
+
 
 export default App;

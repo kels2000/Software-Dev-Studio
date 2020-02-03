@@ -58,20 +58,5 @@ function findAnswers(grid, dict, used, i, j, currWord, answers){
 
 
 
-var grid = [['A', 'B', 'C', 'D'], ['E', 'F','G', 'H'], ['I', 'J', 'K', 'L'], ['A', 'B', 'C', 'D']]
-
-var grid2 = [['A', 'B'], ['C', 'D']]
-
-var dict3 = [[]]
-
-var dict = ['ABEF', 'AFJIEB', 'DGKD', 'DGKA']
-
-var dict2 = ['A', 'B', 'AC', 'ACA', 'ACB', 'DE']
-
-var grid3 = [['QU', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
-
-var dict3 = ['QUB', 'EFI', 'AC', 'DEB', 'CEGH', 'DE']
-
-boggleSolver(grid3, dict3)
 
 

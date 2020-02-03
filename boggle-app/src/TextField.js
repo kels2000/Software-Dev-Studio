@@ -16,7 +16,7 @@ export default function BasicTextFields() {
 
   return (
     <form className= "MuiTextField" noValidate autoComplete="off">
-      <TextField id="filled-basic" label="Enter answer..." variant="filled" />
+      <TextField id="filled-basic" label="  Enter answer..." variant="standard" />
     </form>
   );
 }
