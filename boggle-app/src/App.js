@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import findAllSolutions from './boggle_solver.js';
+//import AnswerInput from './TextField.js';
+//import AnswersFound from './AnswersFound.js';
 import {RandomGrid} from './BoilerPlate';
 import NestedGrid from './Board.js';
 import './App.css';
 import BasicTextFields from './TextField.js';
-import findAllSolutions from './boggle_solver.js';
 import Board from './BoggleBoard.js'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -25,7 +27,7 @@ const [show, setShow] = useState(false);
   }
   function startGame(bool) {
     if (bool === true) {
-      return <Board/>;
+      return <Board/>
     }
     else if (bool == false) {
       return null;
@@ -42,7 +44,7 @@ const [show, setShow] = useState(false);
         <br></br>
         {BasicTextFields()}
         <br></br>
-        <Button onClick={() => toggleBoard()}>{buttonText}</Button>
+        <Button variant = "contained" className= "MuiButton" onClick={() => toggleBoard()}>{buttonText}</Button>
         <a
           className="App-link"
           href="https://reactjs.org"

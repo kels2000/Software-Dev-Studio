@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
-
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Board from './BoggleBoard';
 
@@ -20,7 +19,7 @@ const [show, setShow] = useState(false);
     if (bool === true) {
       return <Board/>;
     }
-    else if (bool == false) {
+    else if (bool === false) {
       return null;
     }
   }
