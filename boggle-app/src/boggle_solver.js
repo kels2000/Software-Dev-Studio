@@ -2,12 +2,11 @@ exports.findAllSolutions = boggleSolver;
 
 
 function boggleSolver(grid, dict) {
-  var answers = [];
-  findWords(grid, dict, answers);
-  return answers;
+  this.grid = grid;
+  this.answers = new Set();
 }
 
-function findWords(grid, dict, answers) {
+boggleSolver.prototype.solve = function findWords(grid, dict, answers) {
   //new list to hold words
   var used = [];
   //loop through grid
@@ -55,6 +54,15 @@ function findAnswers(grid, dict, used, i, j, currWord, answers){
   currWord = '';
   used[i][j] = false;
 };
+
+function findAllSolutions(grid, dict) {
+  console.log("findAllSolutions");
+  let solver = new boggleSolver(grid, dict);
+  solver.solve();
+  return [...solver.answers];
+}
+
+export default findAllSolutions;
 
 
 

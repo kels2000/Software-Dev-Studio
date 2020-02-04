@@ -1,14 +1,14 @@
 import React from 'react';
 
-function AnswersFound({answers, title}) {
+function AnswersFound({words, title}) {
 
     return (
         <div>
-            {answers. length > 0 && 
-            <h2>{title}:{answers.length}</h2>
+            {words.length > 0 && 
+            <h2>{title}:{words.length}</h2>
         }
         <ul>
-            {answers.mapl((solution) => {return <li key={solution}>{solution}</li>})}
+            {words.map((solution) => {return <li key={solution}>{solution}</li>})}
         </ul>
         </div>
     );

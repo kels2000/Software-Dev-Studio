@@ -11,12 +11,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function AnswerInput({answers, foundAnswers, rightAnswer}) {
+function AnswerInput({answers, foundAnswers, rightAnswerMessage}) {
   const [message, setMessage] = useState("Enter your answer!")
   const [answer, setAnswer] = useState('');
 
   function checkAnswer(){
     if (answers.includes(answer)){
+      rightAnswerMessage(answer);
       setMessage(answer + " is right!")
     }
     else if (foundAnswers.includes(answer)){
