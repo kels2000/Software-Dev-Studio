@@ -1,5 +1,3 @@
-exports.findAllSolutions = boggleSolver;
-
 
 function boggleSolver(grid, dict) {
   this.grid = grid;
